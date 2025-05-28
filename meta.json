@@ -1183,6 +1183,19 @@
     "tags": ["identity", "auth"]
   },
   {
+    "id": "facturascripts",
+    "name": "Facturascripts",
+    "version": "1.0.0",
+    "description": "FacturaScripts is a free and open-source accounting and billing software designed for small and medium-sized enterprises (SMEs) and freelancers.",
+    "logo": "facturascripts.png",
+    "links": {
+      "github": "https://github.com/facturascripts",
+      "website": "https://facturascripts.com/",
+      "docs": "https://facturascripts.com/ayuda-dev"
+    },
+    "tags": ["accounting", "billing", "ERP"]
+  },
+  {
     "id": "pocket-id",
     "name": "Pocket ID",
     "version": "0.35.1",

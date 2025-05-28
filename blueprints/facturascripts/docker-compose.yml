@@ -1,0 +1,38 @@
+services:
+
+  mysql:
+    container_name: dbfacturascripts
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${FFSCRIPT_MYSQL_PASSWORD}
+      MYSQL_DATABASE: facturascripts
+      
+    volumes:
+      - ./mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  facturascripts:
+    container_name: facturascripts
+    image: facturascripts/facturascripts:latest
+    restart: always
+    ports:
+      - 80
+    volumes:
+      - ./facturascripts:/var/www/html
+
+  adminer:
+    container_name: adminer_facturascripts
+    image: adminer
+    restart: always
+    ports:
+      - 8080
+
+networks:
+  dokploy-network:
+  external: true

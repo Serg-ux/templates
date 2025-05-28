@@ -1,0 +1,16 @@
+[variables]
+main_domain = "${domain}"
+
+[config]
+[[config.domains]]
+serviceName = "adminer"
+port = 8080
+host = "${main_domain}" 
+
+[[config.domains]]
+serviceName = "facturascripts"
+port = 80
+host = "${main_domain}"
+
+[config.env]
+FFSCRIPT_MYSQL_PASSWORD = "tq04^vUuT^Rssh1Pcaa^YKxP#PG5J1DabYHEy"
