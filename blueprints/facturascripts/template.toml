@@ -1,5 +1,8 @@
 [variables]
 main_domain = "${domain}"
+container_name_mysql = "db_mysql_${domain}"
+container_name_facturascripts = "facturascripts_${domain}"
+db_root_password = "${password}"
 
 [config]
 [[config.domains]]
@@ -13,4 +16,6 @@ port = 80
 host = "${main_domain}"
 
 [config.env]
-FFSCRIPT_MYSQL_PASSWORD = "tq04^vUuT^Rssh1Pcaa^YKxP#PG5J1DabYHEy"
+MYSQL_SECRET_PASSWORD = "${db_root_password}"
+CONTAINER_NAME_FACTURASCRIPTS = "${container_name_facturascripts}"
+CONTAINER_NAME_MYSQL = "${container_name_mysql}"
