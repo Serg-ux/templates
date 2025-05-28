@@ -21,7 +21,7 @@ services:
     container_name: facturascripts
     image: facturascripts/facturascripts:latest
     restart: always
-    ports:
+    expose:
       - 80
     volumes:
       - ./facturascripts:/var/www/html
